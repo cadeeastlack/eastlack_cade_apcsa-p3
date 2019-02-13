@@ -15,14 +15,14 @@ public class WordsCompare
 
 	public WordsCompare()
 	{
-		wordOne = ;
-		wordTwo = ;
-		compare = ;
+		setWords("","");
+		compare = 0;
 	}
 
 	public WordsCompare(String one, String two)
 	{
-		one.compareTo(two);
+		compare = 0;
+		setWords(one,two);
 	}
 
 	public void setWords(String one, String two)
@@ -44,9 +44,7 @@ public class WordsCompare
 			return wordOne + " should be placed before " + wordTwo + "\n";
 		}
 		else
-		{
-			
 			return wordOne + " should be placed after " + wordTwo + "\n";
-		}
+		
 	}
 }
