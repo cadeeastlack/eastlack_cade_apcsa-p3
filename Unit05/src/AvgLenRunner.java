@@ -21,5 +21,6 @@ public class AvgLenRunner
 		System.out.println( s.go( "catsand" , "aplusdogsaplus" ) ) ;
 		System.out.println( s.go( "7", "77777" ) ) ;
 		
+		System.out.println( s.go( "55", "666" ) ) ;
 	}
 }

@@ -8,6 +8,14 @@ public class FirstLastVowel
 {
    public static String go( String a )
 	{
-		return "add code here";
+	   String first = a.substring(0,1);
+	   String last = a.substring(a.length()-1, a.length());
+	
+	   String checkString = "aeiouAEIOU";
+	   if(checkString.indexOf(last) >= 0 || checkString.indexOf(first) >= 0) {
+		   return "yes";
+	   }
+	   
+	   return "no";
 	}
 }

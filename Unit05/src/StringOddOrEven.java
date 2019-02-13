@@ -15,23 +15,28 @@ public class StringOddOrEven
 
 	public StringOddOrEven()
 	{
+		
 	}
 
 	public StringOddOrEven(String s)
 	{
+		
 	}
 
 	public void setString(String s)
 	{
+		
 	}
 
  	public boolean isEven()
  	{
+ 		
 		return false;
 	}
 
  	public String toString()
  	{
+ 		
  		String output="";
  		return output;
 	}
