@@ -21,6 +21,20 @@ public class StringExplorer
 		System.out.println ("After toLowerCase(), sample = " + sample);
 		
 		//  Try other methods here:
+		int count = 0;
+		int i = 0;
+		sample = "Computer Science is the best, the greatest, and the most wonderful subject to study!";
+		while (i<sample.length()-3) {
+			if (sample.substring(i+1).indexOf("the")>=0)
+			{
+				count++;
+				i=sample.substring(i+1).indexOf("the") + i + 1;
+			}
+			//else {
+				//i=sample.length();
+			//}
+		}
+		System.out.println("The string has " + count + " occurrences of 'the'.");
 
 	}
 

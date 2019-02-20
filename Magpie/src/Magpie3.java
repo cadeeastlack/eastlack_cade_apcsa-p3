@@ -30,13 +30,10 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
+		statement.trim();
+		if (statement.length() <= 0)
 		{
 			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0)
-		{
-			response = "Why so negative?";
 		}
 		else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
@@ -44,6 +41,33 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (findKeyword(statement, "dog")>= 0 || findKeyword(statement, "cat") >= 0)
+	    {
+	      response = "Tell me more about your pets.";
+	    }
+	    else if (findKeyword(statement, "Mauro") >= 0)
+	    {
+	      response = "The best!";
+	    }
+	    else if (findKeyword(statement, "hey") >= 0 || findKeyword(statement,"welcome") >= 0 || findKeyword(statement,"hi")>= 0)
+	    {
+	      response = "Hey buddy!";
+	    }
+	    else if (findKeyword(statement,"spongebob") >= 0 || findKeyword(statement,"halftime")>= 0)
+	    {
+	      response = "Travis Scott was ok.";
+	    }
+	    else if (findKeyword(statement,"racecars") >= 0 || findKeyword(statement,"Daytona") >= 0 || findKeyword(statement,"track") >=0 || findKeyword(statement,"NASCAR") >= 0)
+	    {
+	      response = "Who is your favorite racer?";
+	    }
+		
+	
+		
+		else if (findKeyword(statement, "no") >= 0)
+		{
+			response = "Why so negative?";
 		}
 		else
 		{
@@ -144,7 +168,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -164,9 +188,18 @@ public class Magpie3
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+			
 		}
+		else if (whichResponse == 4)
+		{
+		    response = "I agree.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "I love me some racing.";
+		}
+
 
 		return response;
 	}
-
 }
