@@ -180,7 +180,7 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("src/images/swan.jpg");
-    swan.explore();
+    //swan.explore();
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -189,35 +189,31 @@ public class PictureTester
     * method in Java */
   public static void main(String[] args)
   {
-    // uncomment a call here to run a test
-    // and comment out the ones you don't want
-    // to run
 	  //Picture tester = new Picture();
 	  
-	  //testZeroBlue(); //finished
-	  //testKeepOnlyBlue();   //finished
-	  //testKeepOnlyRed(); //finished
-	  //testKeepOnlyGreen(); //finished
-	  //testNegate(); //finished
-	  //testGrayscale();  //finished
-	  //testFixUnderwater(); //finished
-	  //testMirrorVertical();//finished
-	  //testMirrorHorizontal(); //finished
-	  //testMirrorDiagonal(); //finished
-	  //testMirrorVerticalRightToLeft();//finished
-	  //testMirrorVerticalBotToTop(); //finished
-	  //testMirrorTemple();//finished
-	  //testMirrorArms();//finished
-	  //testMirrorGull();//finished
-	  //testCollage();//finished
-	  testCopy();//finished
-	  //testCopy2();//finished
-	  //testMyCollage();//finished
-	  //testEdgeDetection();//finished
+	  //testZeroBlue(); //complete -- removes all B from color scheme, RG stay
+	  //testKeepOnlyBlue();   //complete -- removes all RG from color scheme, B stays 
+	  //testKeepOnlyRed(); //complete -- removes all GB from color scheme, R stays
+	  //testKeepOnlyGreen(); //complete -- removes all RB from color scheme, G stays
+	  //testNegate(); //complete -- makes image negative 
+	  //testGrayscale();  //complete -- removes all RGB
+	  //testFixUnderwater(); //complete -- saturates B 
+	  //testMirrorVertical();//complete -- produces a mirror image vertically 
+	  //testMirrorHorizontal(); //complete
+	  //testMirrorDiagonal(); //complete
+	  //testMirrorVerticalRightToLeft();//complete
+	  //testMirrorVerticalBotToTop(); //complete
+	  //testMirrorTemple();//complete
+	  //testMirrorArms();//complete
+	  //testMirrorGull();//complete
+	  //testCollage();//complete
+	  //testCopy();//complete
+	  //testCopy2();//complete
+	  //testMyCollage();//complete --
+	  //testEdgeDetection();//complete -- changes the edges to black and removes all RGB
     
 	  
-	  //not finished down below 
-    //THIS IS NASTY WATER DOWN SOUTH
+	  //everything underneath isn't finished 
 	  
 	  //testEdgeDetection2();
 	  //testChromakey();

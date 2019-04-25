@@ -373,14 +373,14 @@ public class Picture extends SimplePicture
  	}
   
   	public void myCollage() {
-  		Picture flower1 = new Picture("src\\images\\flower1.jpg");
+  		Picture flower1 = new Picture("src/images/flower1.jpg");
   		flower1.mirrorVerticalBotToTop();
-  		Picture flower2 = new Picture("src\\images\\flower2.jpg");
+  		Picture flower2 = new Picture("src/images/flower2.jpg");
   		flower2.Grayscale();
   		this.copy(flower1,0,0);
   		this.copy(flower2,100,0);
   		this.copy(flower1,200,0);
-  		Picture nextflower = new Picture("src\\images\\flower1.jpg");
+  		Picture nextflower = new Picture("src/images/flower1.jpg");
   		nextflower.keepOnlyGreen();
   		this.copy(nextflower,300,0);
   		this.copy(flower1,400,0);
@@ -435,7 +435,7 @@ public class Picture extends SimplePicture
    */
   	public static void main(String[] args) 
   	{
-  		Picture beach = new Picture("beach.jpg");
+  		Picture beach = new Picture("src/images/beach.jpg");
   		beach.explore();
   		beach.zeroBlue();
   		beach.explore();
