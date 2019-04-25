@@ -12,7 +12,7 @@ public class PictureTester
   public static void testZeroBlue()
   {
 	Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.zeroBlue();
     beach.explore();
   }
@@ -21,7 +21,7 @@ public class PictureTester
   public static void testKeepOnlyBlue()
   {
     Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.keepOnlyBlue();
     beach.explore();
   }
@@ -29,7 +29,7 @@ public class PictureTester
   public static void testKeepOnlyRed()
   {
     Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.keepOnlyRed();
     beach.explore();
   }
@@ -37,7 +37,7 @@ public class PictureTester
   public static void testKeepOnlyGreen()
   {
     Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.keepOnlyGreen();
     beach.explore();
   }
@@ -47,7 +47,7 @@ public class PictureTester
   public static void testNegate()
   {
     Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.Negate();
     beach.explore();
   }
@@ -57,7 +57,7 @@ public class PictureTester
   public static void testGrayscale()
   {
     Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.Grayscale();
     beach.explore();
   }
@@ -66,7 +66,7 @@ public class PictureTester
   /** Method to test testFixUnderwater */
   public static void testFixUnderwater() {
 	  Picture water = new Picture("src/images/water.jpg");
-	  //water.explore();
+	  water.explore();
 	  water.FixUnderWater();
 	  water.explore();
   }
@@ -77,7 +77,7 @@ public class PictureTester
   public static void testMirrorVertical()
   {
 	Picture caterpillar = new Picture("src/images/caterpillar.jpg");
-    //caterpillar.explore();
+    caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
@@ -86,7 +86,7 @@ public class PictureTester
   public static void testMirrorVerticalRightToLeft()
   {
     Picture redMCycle = new Picture("src/images/redMotorcycle.jpg");
-    //redMCycle.explore();
+    redMCycle.explore();
     redMCycle.mirrorVerticalRightToLeft();
     redMCycle.explore();
   }
@@ -94,14 +94,14 @@ public class PictureTester
   public static void testMirrorVerticalBotToTop()
   {
     Picture redMCycle = new Picture("src/images/redMotorcycle.jpg");
-    //redMCycle.explore();
+    redMCycle.explore();
     redMCycle.mirrorVerticalBotToTop();
     redMCycle.explore();
   }
   public static void testMirrorDiagonal()
   {
     Picture beach = new Picture("src/images/beach.jpg");
-    //beach.explore();
+    beach.explore();
     beach.mirrorDiagonal();
     beach.explore();
   }
@@ -109,7 +109,7 @@ public class PictureTester
   public static void testMirrorHorizontal()
   {
     Picture caterpillar = new Picture("src/images/caterpillar.jpg");
-    //caterpillar.explore();
+    caterpillar.explore();
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
   }
@@ -118,21 +118,21 @@ public class PictureTester
   public static void testMirrorTemple()
   {
 	  Picture temple = new Picture("src/images/temple.jpg");
-    //temple.explore();
+    temple.explore();
     temple.mirrorTemple();
     temple.explore();
   }
   /** Method to test mirrorArms*/
   public static void testMirrorArms() {
 	  Picture snowman = new Picture("src/images/snowman.jpg");
-	  //snowman.explore();
+	  snowman.explore();
 	  snowman.mirrorArms();
 	  snowman.explore();
   }
   /** Method to test mirrorGull*/
   public static void testMirrorGull() {
 	  Picture gull = new Picture("src/images/seagull.jpg");
-	  //gull.explore();
+	  gull.explore();
 	  gull.mirrorGull();
 	  gull.explore();
   }
@@ -160,7 +160,7 @@ public class PictureTester
   public static void testCopy(){
 	  Picture copy = new Picture("src/images/640x480.jpg");
 	  Picture copied = new Picture("src/images/snowman.jpg");
-	  //copy.explore();
+	  copy.explore();
 	  copy.copy(copied, 72, 120);
 	  copy.explore();
   }
@@ -170,7 +170,7 @@ public class PictureTester
   public static void testCopy2(){
 	  Picture copy = new Picture("src/images/640x480.jpg");
 	  Picture copied = new Picture("src/images/snowman.jpg");
-	  //copy.explore();
+	  copy.explore();
 	  copy.copy2(copied, 200, 300, 400, 500);
 	  copy.explore();
   }
@@ -180,7 +180,7 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("src/images/swan.jpg");
-    //swan.explore();
+    swan.explore();
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -206,7 +206,7 @@ public class PictureTester
 	  //testMirrorTemple();//complete
 	  //testMirrorArms();//complete
 	  //testMirrorGull();//complete
-	  //testCollage();//complete
+	  testCollage();//complete
 	  //testCopy();//complete
 	  //testCopy2();//complete
 	  //testMyCollage();//complete --
