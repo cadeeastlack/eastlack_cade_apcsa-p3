@@ -25,7 +25,7 @@ public class Picture extends SimplePicture
     /* not needed but use it to show students the implicit call to super()
      * child constructors always call a parent constructor 
      */
-    super();  
+	  super();  
   }
   
   /**
@@ -36,6 +36,7 @@ public class Picture extends SimplePicture
   {
     // let the parent class handle this fileName
     super(fileName);
+    System.out.print("Name - Cade Eastlack\nPeriod 3\nDate - 4/25/19");
   }
   
   /**
