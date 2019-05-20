@@ -185,6 +185,16 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testEncodeDecode() 
+  {
+	Picture beach = new Picture("beach.jpg");
+	beach.explore();
+	beach.encode(new Picture("crybytes-apple_icon.jpg"));
+	beach.explore();
+	beach.decode().explore();
+	}
+
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -206,7 +216,7 @@ public class PictureTester
 	  //testMirrorTemple();//complete
 	  //testMirrorArms();//complete
 	  //testMirrorGull();//complete
-	  testCollage();//complete
+	  //testCollage();//complete
 	  //testCopy();//complete
 	  //testCopy2();//complete
 	  //testMyCollage();//complete --
@@ -217,7 +227,7 @@ public class PictureTester
 	  
 	  //testEdgeDetection2();
 	  //testChromakey();
-	  //testEncodeAndDecode();
+	  testEncodeDecode();
 	  //testGetCountRedOverValue(250);
 	  //testSetRedToHalfValueInTopHalf();
 	  //testClearBlueOverValue(200);

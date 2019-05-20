@@ -430,6 +430,88 @@ public class Picture extends SimplePicture
   		}
   	}
   
+  	public void encode(Picture messagePict) 
+  	{
+		Pixel[][] messagePixels = messagePict.getPixels2D();
+		Pixel[][] currPixels = this.getPixels2D();
+		Pixel currPixel = null;
+		Pixel messagePixel = null;
+		Pixel leftPixel = null;
+		for (int row = 0; row < this.getHeight(); row++) {
+			for (int col = 1; col < this.getWidth() - 1; col++) {
+				currPixel = currPixels[row][col];
+				leftPixel = currPixels[row][col - 1];
+				if (currPixel.equals(leftPixel)) {
+					currPixel.setRed(currPixel.getRed() + 1);
+					currPixel.setGreen(currPixel.getGreen());
+					currPixel.setBlue(currPixel.getBlue());
+				}
+			}
+		}
+		
+		for (int row = 0; row < messagePict.getHeight(); row++) {
+			for (int col = 1; col < messagePict.getWidth(); col+=2) {
+				currPixel = currPixels[row][col];
+				messagePixel = messagePixels[row][col];
+				if (messagePixel.colorDistance(Color.BLACK) < 50) {
+					leftPixel = currPixels[row][col - 1];
+					currPixel.setColor(leftPixel.getColor());
+				}
+			}
+		}
+	}
+
+	/*
+	 * for (int row = 0; row < messagePict.getHeight(); row++) { for (int col =
+	 * 0; col < messagePict.getWidth(); col++) { currPixel =
+	 * currPixels[row][col]; messagePixel = messagePixels[row][col]; if
+	 * (messagePixel.colorDistance(Color.BLACK) < 50) { rightPixel =
+	 * currPixels[row][col + 1]; currPixel.setColor(rightPixel.getColor()); } }
+	 * }
+	 */
+	
+
+	/**
+	 * Method to decode a message hidden in the red value of the current picture
+	 * 
+	 * @return the picture with the hidden message
+	 */
+	/*
+	 * public Picture decode() { Pixel[][] pixels = this.getPixels2D(); int
+	 * height = this.getHeight(); int width = this.getWidth(); Pixel currPixel =
+	 * null;
+	 * 
+	 * Pixel messagePixel = null; Picture messagePicture = new Picture(height,
+	 * width); Pixel[][] messagePixels = messagePicture.getPixels2D(); int count
+	 * = 0; for (int row = 0; row < this.getHeight(); row++) { for (int col = 0;
+	 * col < this.getWidth(); col++) { currPixel = pixels[row][col];
+	 * messagePixel = messagePixels[row][col]; if (currPixel.getRed() % 2 == 1)
+	 * { messagePixel.setColor(Color.BLACK); count++; } } }
+	 * System.out.println(count); return messagePicture; }
+	 */
+	public Picture decode() 
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		int height = this.getHeight();
+		int width = this.getWidth();
+		Pixel currPixel = null;
+		Pixel leftPixel = null;
+		Pixel messagePixel = null;
+		Picture messagePicture = new Picture(height, width);
+		Pixel[][] messagePixels = messagePicture.getPixels2D();
+		for (int row = 0; row < this.getHeight(); row++) {
+			for (int col = 1; col < this.getWidth() - 1; col++) {
+				currPixel = pixels[row][col];
+				leftPixel = pixels[row][col - 1];
+				messagePixel = messagePixels[row][col];
+				if (currPixel.equals(leftPixel)) {
+					messagePixel.setColor(Color.BLACK);
+					// messagePixels[row][col + 1].setColor(Color.BLACK);
+				}
+			}
+		}
+		return messagePicture;
+	}
   
   /* Main method for testing - each class in Java can have a main 
    * method 
