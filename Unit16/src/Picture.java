@@ -455,7 +455,7 @@ public class Picture extends SimplePicture
  					 currPixel.setColor(Color.WHITE);
  				 }
  				 
-  				 messagePixel = currPixels[row][col];
+  				 messagePixel = messagePixels[row][col];
   				 if (messagePixel.colorDistance(Color.BLACK) < 50)
   				 {
   					 currPixel.setRed(messagePixel.getRed() - messagePixel.getRed() % 10 + codeNum);
@@ -484,22 +484,32 @@ public class Picture extends SimplePicture
 		Picture messagePicture = new Picture(height, width);
   		Pixel[][] messagePixels = messagePicture.getPixels2D();
   		int count = 0; 
+  		boolean counting = true;
+  		int whiteCount = 0;
   		
-  		for (int row = 0; row < this.getHeight(); row++)
+  		for (int row = this.getHeight()-1; row >= 0; row--)
   		{
   			for (int col = 0; col < this.getWidth(); col++)
   			{
+  				
   				currPixel = pixels[row][col];
   				int num = currPixel.getRed();
   				messagePixel = messagePixels[row][col];
   				
-  				Scanner check = new Scanner(System.in);
-  				int userInt = check.nextInt();
+  				if(currPixel.getRed() == 255 && currPixel.getGreen() == 255 && currPixel.getBlue() == 255 && counting) 
+  				{
+  					whiteCount++;
+  				}
+  				else
+  				{
+  					counting = false;
+  				}
   				
-  				if (num % 10 == userInt)
+  				if (num % 10 == whiteCount)
   				{
   					messagePixel.setColor(Color.BLACK);
   					count++;
+  					
   				}
   			}
   		}
