@@ -187,9 +187,9 @@ public class PictureTester
   
   public static void testEncodeDecode() 
   {
-	Picture beach = new Picture("beach.jpg");
+	Picture beach = new Picture("src/images/beach.jpg");
 	beach.explore();
-	beach.encode(new Picture("crybytes-apple_icon.jpg"));
+	beach.encode(new Picture("src/images/crybytes-apple_icon.jpg"));
 	beach.explore();
 	beach.decode().explore();
 	}
