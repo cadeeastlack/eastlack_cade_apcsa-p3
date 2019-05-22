@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.text.*;
 import java.util.*;
 import java.util.List; // resolves problem with java.awt.List and java.util.List
+import java.util.Scanner;
 
 /**
  * A class that represents a picture.  This class inherits from 
@@ -36,7 +37,7 @@ public class Picture extends SimplePicture
   {
     // let the parent class handle this fileName
     super(fileName);
-    System.out.print("Name - Cade Eastlack\nPeriod 3\nDate - 4/25/19");
+    System.out.print("Name - Cade Eastlack\nPeriod 3\nDate - 4/25/19\n\n");
   }
   
   /**
@@ -429,10 +430,10 @@ public class Picture extends SimplePicture
   			}
   		}
   	}
-  	//https://github.com/Toothyca/wang_ryan_apcsa-p22/blob/master/Unit16/src/Picture.java
+  	
   	public void encode(Picture messagePict) 
   	{
-  		Pixel[][] messagePixels = messagePict.getPixels2D();
+  		 Pixel[][] messagePixels = messagePict.getPixels2D();
   		 Pixel[][] currPixels = this.getPixels2D();
   		 Pixel currPixel = null;
   		 Pixel messagePixel = null;
@@ -473,7 +474,7 @@ public class Picture extends SimplePicture
 	 * @return the picture with the hidden message
 	 */
 	
-	/*public Picture decode() 
+	public Picture decode() 
 	{
 		Pixel[][] pixels = this.getPixels2D();
   		int height = this.getHeight();
@@ -483,14 +484,19 @@ public class Picture extends SimplePicture
 		Picture messagePicture = new Picture(height, width);
   		Pixel[][] messagePixels = messagePicture.getPixels2D();
   		int count = 0; 
+  		
   		for (int row = 0; row < this.getHeight(); row++)
   		{
   			for (int col = 0; col < this.getWidth(); col++)
   			{
   				currPixel = pixels[row][col];
-  				int num = currPixel.getRed() * currPixel.getGreen();
+  				int num = currPixel.getRed();
   				messagePixel = messagePixels[row][col];
-  				if (((currPixel.getRed() * currPixel.getGreen()) % 10) % 2 != 0 && (currPixel.getRed() % 2 != 0) && (currPixel.getGreen() % 2 != 0))
+  				
+  				Scanner check = new Scanner(System.in);
+  				int userInt = check.nextInt();
+  				
+  				if (num % 10 == userInt)
   				{
   					messagePixel.setColor(Color.BLACK);
   					count++;
@@ -500,7 +506,7 @@ public class Picture extends SimplePicture
   		
   		System.out.println(count);
   		return messagePicture;
-	}*/
+	}
   
   /* Main method for testing - each class in Java can have a main 
    * method 
@@ -512,5 +518,7 @@ public class Picture extends SimplePicture
   		beach.zeroBlue();
   		beach.explore();
   	}
+
+	
   
 } // this } is the end of class Picture, put all new methods before this
