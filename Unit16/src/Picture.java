@@ -458,7 +458,7 @@ public class Picture extends SimplePicture
   				 messagePixel = messagePixels[row][col];
   				 if (messagePixel.colorDistance(Color.BLACK) < 50)
   				 {
-  					 currPixel.setRed(messagePixel.getRed() - messagePixel.getRed() % 10 + codeNum);
+  					 currPixel.setRed((currPixel.getRed()/10)*10  + codeNum);
   					 count++;
   				 }
 
@@ -507,6 +507,7 @@ public class Picture extends SimplePicture
   				
   				if (num % 10 == whiteCount)
   				{
+  					
   					messagePixel.setColor(Color.BLACK);
   					count++;
   					
@@ -521,7 +522,7 @@ public class Picture extends SimplePicture
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
-  	public static void main(String[] args) 
+  	/*public static void main(String[] args) 
   	{
   		Picture beach = new Picture("src/images/beach.jpg");
   		beach.explore();
@@ -529,6 +530,6 @@ public class Picture extends SimplePicture
   		beach.explore();
   	}
 
-	
+	*/
   
 } // this } is the end of class Picture, put all new methods before this
